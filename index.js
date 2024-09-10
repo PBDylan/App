@@ -13,7 +13,6 @@ const start = () => {
                 return
         }
     }
-
 }
 
 start()
