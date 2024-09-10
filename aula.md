@@ -4,7 +4,7 @@ Maneira de dar instrução ao computador. Como um lego, você irá utilizar peç
 💡 Algoritmo: Sequência de passos lógica e finita para resolução de um problema.
 
 ## Peças de uma linguagem
-Comentários
+[x] Comentários
 Declaração de variáveis (const, let)
 Operadores (atribuição, concatenação, matemáticos, lógicos )
 Tipos de dados (string, number, boolean)
