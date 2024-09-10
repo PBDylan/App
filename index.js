@@ -21,21 +21,26 @@ console.log(mensagem_2);
 //Arrays, objetos
 //Listas ordenas e/ou organizadas são arrays
 //["indice_0", "indice_1"]
-let metas = ["dylan", "alo"]
+//let metas = ["dylan", "alo"]
 
 //Os + são para concatenação
-console.log(metas[1] + ", " + metas[0])
+//console.log(metas[1] + ", " + metas[0])
 
 //Objeto = {}
 let meta = {
     value: 'ler um livro todo mês',
-    checked: false,
-    log: (info) => {
-        console.log(info)
-    }
+    checked: true,
 }
 
-meta.log(meta.value)
+let metas = [
+    meta,
+    {
+        value: "caminhar 20 minutos todos os dias",
+        checked: false
+    }
+]
+
+console.log(metas[1].value)
 
 //Function // arrow function
 //const criarMeta = () => {}
