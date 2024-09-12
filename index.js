@@ -84,6 +84,30 @@ const metasRealizadas = async () => {
     })
 }
 
+const deletarMetas = async () => {
+    const metasDesmarcadas = metas.map((meta) => {
+        return {value: meta.value, checked: false }
+    })
+
+    const itemsADeletar = await checkbox({
+        message: 'Selecione um item para deletar',
+        choices: [metasDesmarcadas],
+        instructions: false,
+    })   
+
+    if(itemsADeletar.length == 0) {
+        console.log("Nenhum item para deletar!")
+        return
+    }
+
+    itemsADeletar.forEach((item) => {
+        metas = metas.filter((meta) => {
+            return meta.value != item
+        })
+    })
+
+    console.log("Meta(s) deletada(s) com sucesso!")
+}
 //Ou function start() {}
 //Sempre que você tiver "await" na func, vai precisarescreve assim a const: const async start
 //await significa que o seu código está esperando que uma function "select" cumpra a promessa de trazer uma resposta positiva ou negativa em relação ao pedido do cliente.
@@ -110,6 +134,10 @@ const start = async () => {
                     value: "abertas"
                 },
                 {
+                    name: "Deletar metas",
+                    value: "deletar"
+                },
+                {
                     name: "Sair",
                     value: "sair"
                 }
@@ -129,7 +157,10 @@ const start = async () => {
                 break
             case "abertas":
                 await metasAbertas()
-                break        
+                break
+            case "deletar":
+                await deletarMetas()
+                break
             case "sair":
                 console.log("Até a próxima!")
                 return
